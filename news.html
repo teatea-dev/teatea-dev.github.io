@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お知らせ | TeaTea</title>
+
+<!-- Google Translate 既定スタイル調整 & ダークモード対応 -->
+<style>
+  /* -----------------------------------------------------------------
+   * 1. 共通・ライトモード用スタイル
+   * ----------------------------------------------------------------- */
+  body { 
+    font-family: sans-serif; 
+    line-height: 1.6; 
+    padding: 20px; 
+    max-width: 800px; 
+    margin: auto; 
+    font-size: 16px; 
+    color: #333; 
+    background-color: #ffffff;
+    top: 0 !important; 
+  }
+  .goog-te-banner-frame { display: none !important; }
+  #google_translate_element { display: none; }
+  
+  /* お知らせ記事（カード風枠線・区切り） */
+  .news-item {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+  .news-item:last-child {
+    border-bottom: none;
+  }
+  
+  /* 日付とバッジ */
+  .news-meta {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    font-size: 12px;
+    border-radius: 4px;
+    background-color: #e0e0e0;
+    color: #333;
+    font-weight: bold;
+  }
+  .badge.update { background-color: #e3f2fd; color: #0d47a1; } /* アプデ（青） */
+  .badge.important { background-color: #ffebee; color: #c62828; } /* 重要（赤） */
+  
+  /* タイトルと本文 */
+  .news-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+  }
+  .news-content {
+    margin: 0;
+    color: #444;
+  }
+  .news-content ul {
+    padding-left: 20px;
+    margin: 10px 0;
+  }
+  .news-content li {
+    margin-bottom: 6px;
+  }
+
+  /* -----------------------------------------------------------------
+   * 2. ダークモード用スタイル（アプリの背景色 #121212 と統一）
+   * ----------------------------------------------------------------- */
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+    .news-item {
+      border-bottom-color: #2a2a2a;
+    }
+    .news-meta {
+      color: #a0a0a0;
+    }
+    .news-title {
+      color: #ffffff;
+    }
+    .news-content {
+      color: #cccccc;
+    }
+    a {
+      color: #8ab4f8; /* リンクが見やすい明るい青に変化 */
+    }
+    .badge {
+      background-color: #333333;
+      color: #e0e0e0;
+    }
+    .badge.update {
+      background-color: #1e3a8a;
+      color: #93c5fd;
+    }
+    .badge.important {
+      background-color: #7f1d1d;
+      color: #fca5a5;
+    }
+  }
+</style>
+
+<!-- 自動言語切り替えスクリプト -->
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'ja',
+      autoDisplay: false
+    }, 'google_translate_element');
+
+    // URLの ?lang=パラメータを取得
+    const urlParams = new URLSearchParams(window.location.search);
+    const targetLang = urlParams.get('lang');
+
+    // ja 以外、かつ指定がある場合に自動切り替え
+    if (targetLang && targetLang !== 'ja') {
+      setTimeout(function() {
+        const select = document.querySelector('.goog-te-combo');
+        if (select) {
+          select.value = targetLang;
+          select.dispatchEvent(new Event('change'));
+        }
+      }, 500);
+    }
+  }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
+<body>
+
+<div id="google_translate_element"></div>
+
+<h1>TeaTea からのお知らせ</h1>
+
+<!-- お知らせ 3件目 -->
+<div class="news-item">
+  <div class="news-meta">
+    <span>2026年9月10日</span>
+    <span class="badge update">お知らせ</span>
+  </div>
+  <h2 class="news-title">✨ 新機能「職業カスタム機能」追加のお知らせ</h2>
+  <div class="news-content">
+    <p>いつもメッセージアプリ『TeaTea』をご利用いただき、誠にありがとうございます。</p>
+    <p>今回のアップデートにて、新機能<strong>「職業カスタム機能」</strong>を追加いたしました！🎉</p>
+    <p>
+      設定画面からご自身の職業が設定できるようになりました。<br>
+      あなたの日常のシチュエーションに合わせて、TeaTea からの応援メッセージがさらにあなた専用にカスタマイズされます🔥
+    </p>
+    <p>
+      ぜひ設定画面から職業を設定して、さらにパワーアップした最新のメッセージを受け取ってみてください！🌟
+    </p>
+  </div>
+</div>
+  
+<!-- お知らせ 2件目 -->
+<div class="news-item">
+  <div class="news-meta">
+    <span>2026年8月23日</span>
+    <span class="badge update">お知らせ</span>
+  </div>
+  <h2 class="news-title">TeaTeaのYouTube Shorts / Instagram / TikTok がスタートしました！</h2>
+  <div class="news-content">
+    <p>いつもメッセージアプリ『TeaTea』をご利用いただき、誠にありがとうございます。</p>
+    <p>この度、日々の暮らしにホッとする温かさや、前向きなエネルギーをより身近にお届けするため、公式SNSアカウントを開設いたしました！🎉</p>
+    <ul>
+      <li>👉 <a href="https://www.youtube.com/@TeaTea-App" target="_blank" rel="noopener">YouTubeチャンネルはこちら</a></li>
+      <li>👉 <a href="https://www.instagram.com/teatea.app/" target="_blank" rel="noopener">Instagramアカウントはこちら</a></li>
+      <li>👉 <a href="https://www.tiktok.com/@teatea.app" target="_blank" rel="noopener">TikTokアカウントはこちら</a></li>
+    </ul>
+    <p>
+      アプリと一緒に、SNSでも皆さまの日常にそっと寄り添えるような発信をしてまいります。<br>
+      ぜひ、お好みのプラットフォームでフォローやチェックをよろしくお願いいたします！
+    </p>
+  </div>
+</div>
+  
+<!-- お知らせ 1件目 -->
+<div class="news-item">
+  <div class="news-meta">
+    <span>2026年8月8日</span>
+    <span class="badge update">お知らせ</span>
+  </div>
+  <h2 class="news-title">アプリ配信開始のお知らせ</h2>
+  <div class="news-content">
+    <p>
+      ━━━━━━━━━━━━━━━━━━<br>
+      🍵✨ 大切なあなたをそっと励ます。<br>
+      心温まるメッセージアプリ『TeaTea』 🧸💬💖<br>
+      ━━━━━━━━━━━━━━━━━━ 
+    </p>
+    <p>
+      「今日も一日がんばろう」「自分のペースで進んでいこう」<br>
+      『TeaTea』は、日々を懸命に生きるあなたへ、優しく寄り添う“応援メッセージ”をお届けするアプリです。
+    </p>
+    <p>
+      忙しい日常の中で、ほっと一息つきたい瞬間や、前を向く元気がほしいとき。<br>
+      『TeaTea』から届く温かい言葉が、あなたの背中をそっと押し、ポジティブな一歩を踏み出す力になります。
+    </p>
+    <p>
+      🌟 TeaTea 3つの魅力<br>
+      【1】 心を整える1日3回のメッセージ<br>
+      朝・昼・夜の生活リズムに合わせて、やる気を引き出し、心を優しく包み込む応援の言葉が届きます。<br>      
+      【2】 あなたの生活に寄り添う時間カスタマイズ<br>
+      出勤・通学前、ランチタイム、おやすみ前など、一番元気がほしい時間帯に通知時間を自由に設定可能です。<br>
+      【3】 サプライズで届くランダム通知モード<br>
+      いつ届くかわからないワクワク感と、予想外のタイミングで心に響く励ましが、毎日のモチベーションを高めます。
+    </p>
+    <p>
+      🌱 こんな方におすすめです<br>
+      🔹 頑張る自分に、ホッとする癒やしと元気を補給したい<br>
+      🔹 新しい挑戦や日々の仕事へのモチベーションを高めたい<br>
+      🔹 ポジティブな言葉で、気持ちよく一日をスタートさせたい<br>
+      🔹 無理のない自分のペースで、前向きな習慣を作りたい
+    </p>
+    <p>
+      ━━━━━━━━━━━━━━━━━━<br>
+      言葉の力で、今日という日をもっと優しく、もっとエネルギッシュに。<br>
+      『TeaTea』が、あなたの毎日を一番近くでそっと応援します！
+    </p>    
+  </div>
+</div>
+
+</body>
+</html>
