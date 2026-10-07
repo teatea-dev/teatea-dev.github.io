@@ -8,30 +8,8 @@
 <!-- 共通のCSSファイルを読み込む -->
 <link rel="stylesheet" href="style.css">
 
-<!-- Google Translate スクリプト -->
-<script type="text/javascript">
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-      pageLanguage: 'ja',
-      autoDisplay: false
-    }, 'google_translate_element');
-
-    // URLの ?lang=パラメータを取得
-    const urlParams = new URLSearchParams(window.location.search);
-    const targetLang = urlParams.get('lang');
-
-    // ja 以外、かつ指定がある場合に自動切り替え
-    if (targetLang && targetLang !== 'ja') {
-      setTimeout(function() {
-        const select = document.querySelector('.goog-te-combo');
-        if (select) {
-          select.value = targetLang;
-          select.dispatchEvent(new Event('change'));
-        }
-      }, 500);
-    }
-  }
-</script>
+<!-- 共通の翻訳スクリプトを読み込む -->
+<script src="translate.js"></script>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 <body>
