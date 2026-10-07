@@ -1,0 +1,108 @@
+/* -----------------------------------------------------------------
+ * 1. 共通・ライトモード用スタイル
+ * ----------------------------------------------------------------- */
+body { 
+  font-family: sans-serif; 
+  line-height: 1.6; 
+  padding: 20px; 
+  max-width: 800px; 
+  margin: auto; 
+  font-size: 16px; 
+  color: #333; 
+  background-color: #ffffff;
+  top: 0 !important; 
+}
+.goog-te-banner-frame { display: none !important; }
+#google_translate_element { display: none; }
+
+h1 { 
+  font-size: 24px; 
+  margin-bottom: 20px; 
+}
+h2 { 
+  font-size: 18px; 
+  margin-top: 30px; 
+}
+
+ul {
+  padding-left: 20px;
+  margin: 10px 0;
+}
+li {
+  margin-bottom: 6px;
+}
+
+/* お知らせページ専用のスタイル（他のページには影響しません） */
+.news-item {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+.news-item:last-child {
+  border-bottom: none;
+}
+.news-meta {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+  background-color: #e0e0e0;
+  color: #333;
+  font-weight: bold;
+}
+.badge.update { background-color: #e3f2fd; color: #0d47a1; }
+.badge.important { background-color: #ffebee; color: #c62828; }
+.news-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+}
+.news-content {
+  margin: 0;
+  color: #444;
+}
+
+/* -----------------------------------------------------------------
+ * 2. ダークモード用スタイル（全ページ共通）
+ * ----------------------------------------------------------------- */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+  h1, h2, .news-title {
+    color: #ffffff;
+  }
+  p, li, .news-content {
+    color: #cccccc;
+  }
+  .news-item {
+    border-bottom-color: #2a2a2a;
+  }
+  .news-meta {
+    color: #a0a0a0;
+  }
+  a {
+    color: #8ab4f8;
+  }
+  .badge {
+    background-color: #333333;
+    color: #e0e0e0;
+  }
+  .badge.update {
+    background-color: #1e3a8a;
+    color: #93c5fd;
+  }
+  .badge.important {
+    background-color: #7f1d1d;
+    color: #fca5a5;
+  }
+}
