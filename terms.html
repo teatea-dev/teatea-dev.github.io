@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>利用規約 | TeaTea</title>
+
+<!-- Google Translate 既定スタイル調整 & ダークモード対応 -->
+<style>
+  /* -----------------------------------------------------------------
+   * 1. 共通・ライトモード用スタイル
+   * ----------------------------------------------------------------- */
+  body { 
+    font-family: sans-serif; 
+    line-height: 1.6; 
+    padding: 20px; 
+    max-width: 800px; 
+    margin: auto; 
+    font-size: 16px; 
+    color: #333; 
+    background-color: #ffffff;
+    top: 0 !important; 
+  }
+  .goog-te-banner-frame { display: none !important; }
+  #google_translate_element { display: none; }
+
+  h1 { font-size: 24px; margin-bottom: 20px; }
+  h2 { font-size: 18px; margin-top: 30px; }
+
+  ul {
+    padding-left: 20px;
+    margin: 10px 0;
+  }
+  li {
+    margin-bottom: 6px;
+  }
+
+  /* -----------------------------------------------------------------
+   * 2. ダークモード用スタイル（アプリの背景色 #121212 と統一）
+   * ----------------------------------------------------------------- */
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+    h1, h2 {
+      color: #ffffff;
+    }
+    p, li {
+      color: #cccccc;
+    }
+    a {
+      color: #8ab4f8; /* リンクが見やすい明るい青に変化 */
+    }
+  }
+</style>
+
+<!-- 自動言語切り替えスクリプト -->
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'ja',
+      autoDisplay: false
+    }, 'google_translate_element');
+
+    // URLの ?lang=パラメータを取得
+    const urlParams = new URLSearchParams(window.location.search);
+    const targetLang = urlParams.get('lang');
+
+    // ja 以外、かつ指定がある場合に自動切り替え
+    if (targetLang && targetLang !== 'ja') {
+      setTimeout(function() {
+        const select = document.querySelector('.goog-te-combo');
+        if (select) {
+          select.value = targetLang;
+          select.dispatchEvent(new Event('change'));
+        }
+      }, 500);
+    }
+  }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
+<body>
+
+<div id="google_translate_element"></div>
+
+<h1>TeaTea 利用規約</h1>
+
+<p>
+本利用規約（以下、「本規約」）は、TeaTea（以下、「本アプリ」）の利用に関する条件を定めるものです。<br>
+本アプリをご利用いただくことで、本規約に同意したものとみなします。
+</p>
+
+<h2>1. 本アプリの目的</h2>
+<p>
+本アプリは、ユーザーの通知管理や日常の行動・生活をサポートする目的で提供されます。
+</p>
+
+<h2>2. 利用条件</h2>
+<p>
+ユーザーは、本アプリを個人的かつ非商業的な目的に限り利用できるものとします。<br>
+本アプリの解析、改変、リバースエンジニアリング、不正アクセス等の行為は禁止します。
+</p>
+
+<h2>3. データの取り扱い</h2>
+<p>
+本アプリは、通知設定やメッセージ生成に必要な一部データを端末内に保存します。<br>
+また、メッセージ生成のためテーマ情報等の最小限のデータを外部サーバーへ送信します。<br>
+なお、広告配信やアプリの利用状況解析・品質向上を目的として、第三者モジュール（Google AdMob、Meta Audience Network、Unity Ads、Firebase等）を介して端末情報やログデータ等が自動的に送信・利用される場合があります。<br>
+詳細は別途定める「<a href="https://teatea-dev.github.io/legal/privacy.html" target="_blank" rel="noopener">プライバシーポリシー</a>」をご確認ください。
+</p>
+
+<h2>4. 免責事項</h2>
+<ul>
+  <li>本アプリの利用（または利用不能）により生じた損害やトラブルについて、開発者は理由の如何を問わず一切の責任を負いません。</li>
+  <li>OSの仕様変更、端末の設定（省電力機能や通知権限の無効化等）、または通信環境等により、通知が届かない場合や遅延した場合についても同様とします。</li>
+  <li>開発者は、事前通知なく本アプリの仕様変更、アップデート、サービスの一時中断または提供終了を行うことができるものとし、これによって生じた損害について一切の責任を負いません。</li>
+</ul>
+
+<h2>5. 著作権・知的財産権</h2>
+<p>
+本アプリに関するプログラム、ロゴ、デザイン、テキスト等の著作物および知的財産権はすべて開発者に帰属します。<br>
+無断での転載・複製・二次利用を禁止します。
+</p>
+
+<h2>6. 準拠法および裁判管轄</h2>
+<p>
+本規約は日本法に準拠し、本規約に関して生じた紛争については、開発者の所在地を管轄する日本の裁判所を専属的合意管轄とします。
+</p>
+
+<p>改定日：2026年9月18日</p>
+
+</body>
+</html>
