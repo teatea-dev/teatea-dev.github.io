@@ -45,21 +45,7 @@ li {
   font-size: 14px;
   color: #666;
   margin-bottom: 6px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
 }
-.badge {
-  display: inline-block;
-  padding: 2px 8px;
-  font-size: 12px;
-  border-radius: 4px;
-  background-color: #e0e0e0;
-  color: #333;
-  font-weight: bold;
-}
-.badge.update { background-color: #e3f2fd; color: #0d47a1; }
-.badge.important { background-color: #ffebee; color: #c62828; }
 .news-title {
   font-size: 18px;
   font-weight: bold;
@@ -92,17 +78,5 @@ li {
   }
   a {
     color: #8ab4f8;
-  }
-  .badge {
-    background-color: #333333;
-    color: #e0e0e0;
-  }
-  .badge.update {
-    background-color: #1e3a8a;
-    color: #93c5fd;
-  }
-  .badge.important {
-    background-color: #7f1d1d;
-    color: #fca5a5;
   }
 }
