@@ -1,29 +1,71 @@
 /* -----------------------------------------------------------------
- * 1. 共通・ライトモード用スタイル
+ * 1. カラー定義（CSS変数）
  * ----------------------------------------------------------------- */
+:root {
+  --bg-color: #ffffff;
+  --text-main: #333333;
+  --text-sub: #444444;
+  --text-muted: #666666;
+  --heading-color: #111111;
+  --border-color: #eeeeee;
+  --link-color: #1a73e8;
+}
+
+/* ダークモード時のカラー上書き */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #121212;
+    --text-main: #cccccc;
+    --text-sub: #cccccc;
+    --text-muted: #a0a0a0;
+    --heading-color: #ffffff;
+    --border-color: #2a2a2a;
+    --link-color: #8ab4f8;
+  }
+}
+
+/* -----------------------------------------------------------------
+ * 2. 全体リセット・共通スタイル
+ * ----------------------------------------------------------------- */
+* {
+  box-sizing: border-box;
+}
+
 body { 
-  font-family: sans-serif; 
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; 
   line-height: 1.6; 
   padding: 20px; 
   max-width: 800px; 
   margin: auto; 
   font-size: 16px; 
-  color: #333; 
-  background-color: #ffffff;
+  color: var(--text-main); 
+  background-color: var(--bg-color);
   top: 0 !important; 
 }
-.goog-te-banner-frame { display: none !important; }
-#google_translate_element { display: none; }
 
+a {
+  color: var(--link-color);
+}
+
+/* Google翻訳非表示 */
+.goog-te-banner-frame,
+#google_translate_element { 
+  display: none !important; 
+}
+
+/* 見出し */
 h1 { 
   font-size: 24px; 
   margin-bottom: 20px; 
+  color: var(--heading-color);
 }
 h2 { 
   font-size: 18px; 
   margin-top: 30px; 
+  color: var(--heading-color);
 }
 
+/* リスト */
 ul {
   padding-left: 20px;
   margin: 10px 0;
@@ -32,9 +74,21 @@ li {
   margin-bottom: 6px;
 }
 
-/* お知らせページ専用のスタイル（他のページには影響しません） */
+/* -----------------------------------------------------------------
+ * 3. 寄付レポート用スタイル（追加）
+ * ----------------------------------------------------------------- */
+.report-label {
+  display: inline-block;
+  width: 4em;             /* 最長文字数（寄付金額：4文字）に合わせる */
+  text-align-last: justify; /* 3文字（支援先・証明書）を4文字幅に均等配置 */
+  font-weight: bold;
+}
+
+/* -----------------------------------------------------------------
+ * 4. お知らせページ専用スタイル（news.html）
+ * ----------------------------------------------------------------- */
 .news-item {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--border-color);
   padding-bottom: 20px;
   margin-bottom: 20px;
 }
@@ -43,40 +97,16 @@ li {
 }
 .news-meta {
   font-size: 14px;
-  color: #666;
+  color: var(--text-muted);
   margin-bottom: 6px;
 }
 .news-title {
   font-size: 18px;
   font-weight: bold;
   margin: 0 0 10px 0;
+  color: var(--heading-color);
 }
 .news-content {
   margin: 0;
-  color: #444;
-}
-
-/* -----------------------------------------------------------------
- * 2. ダークモード用スタイル（全ページ共通）
- * ----------------------------------------------------------------- */
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #121212;
-    color: #e0e0e0;
-  }
-  h1, h2, .news-title {
-    color: #ffffff;
-  }
-  p, li, .news-content {
-    color: #cccccc;
-  }
-  .news-item {
-    border-bottom-color: #2a2a2a;
-  }
-  .news-meta {
-    color: #a0a0a0;
-  }
-  a {
-    color: #8ab4f8;
-  }
+  color: var(--text-sub);
 }
