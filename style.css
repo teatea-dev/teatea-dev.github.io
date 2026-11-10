@@ -86,12 +86,13 @@ li {
 
 /* 証明書画像用スタイル（追加） */
 .receipt-image {
-  max-width: 100%;
+  max-width: calc(100% - 6em); /* 文字の横幅分引いてみ出しを防ぐ */
   max-height: 300px;
-  margin-top: 8px;
   border: 1px solid var(--border-color);
   border-radius: 6px;
-  display: block;
+  display: inline-block; /* 横並びにする */
+  vertical-align: top;   /* 上端（文字の高さの上）に合わせる */
+  margin-left: 6px;       /* 文字との間に少し隙間を空ける */
 }
 
 /* -----------------------------------------------------------------
