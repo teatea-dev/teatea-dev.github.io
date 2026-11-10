@@ -84,6 +84,16 @@ li {
   font-weight: bold;
 }
 
+/* 証明書画像用スタイル（追加） */
+.receipt-image {
+  max-width: 100%;
+  max-height: 300px;
+  margin-top: 8px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  display: block;
+}
+
 /* -----------------------------------------------------------------
  * 4. お知らせページ専用スタイル（news.html）
  * ----------------------------------------------------------------- */
