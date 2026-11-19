@@ -121,3 +121,8 @@ li {
   margin: 0;
   color: var(--text-sub);
 }
+/* 項目タイトル強調用 */
+.item-highlight {
+  font-weight: bold;
+  color: var(--heading-color); /* ライト/ダークモードの濃い文字色を自動適用 */
+}
