@@ -165,6 +165,7 @@ adwmg.com, 159512, RESELLER, c9688a22012618e7
 smaato.com, 1100059345, RESELLER, 07bcf65f187117b4
 monetrix.ai, 10761, RESELLER
 start.io, 131192070, RESELLER
+playdigo.com, 1965, RESELLER
 
 # Meta
 facebook.com, 2193390367887960, DIRECT, c3e20eee3f780d68
